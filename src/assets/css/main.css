@@ -1,0 +1,215 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+ul,li{
+  list-style-type:none;
+}
+html{
+  font-family: "Microsoft Yahei";
+}
+body{
+  background: #f5f5f5;
+  padding: 20px;
+  color: #333;
+}
+/*@font-face {
+  font-family: 'iconfont';  !* project id 215544 *!
+  src: url('//at.alicdn.com/t/font_ha5g92jaen17zaor.eot');
+  src: url('//at.alicdn.com/t/font_ha5g92jaen17zaor.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_ha5g92jaen17zaor.woff') format('woff'),
+  url('//at.alicdn.com/t/font_ha5g92jaen17zaor.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_ha5g92jaen17zaor.svg#iconfont') format('svg');
+}*/
+/*.iconfont{
+  font-family: 'iconfont';  !* project id 215544 *!
+}*/
+.products_list{
+  padding: 4px 0;
+}
+h1{
+  line-height: 72px;
+}
+h2{
+  line-height: 40px;
+}
+.todo_wrap{
+  width: 600px;
+  margin: 100px auto 0px auto;
+  background: #fff;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+  position: relative;
+
+}
+.todo_wrap h1{text-align: center;
+  color: rgba(175, 47, 47, 0.15);
+  font-size: 80px;
+  margin-bottom: 50px;
+  position: absolute;
+  top:-100px;
+  width: 100%;
+}
+.new_todo{
+  width: 100%;
+  font-size: 24px;
+  padding: 16px 16px 16px 60px;
+  border:none;
+  background: rgba(0, 0, 0, 0.003);
+  box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
+  box-sizing: border-box;
+}
+
+.new_todo:focus{
+  outline: none;
+}
+.todo_main{
+  position: relative;
+  font-size: 24px;
+
+}
+.toggle_all{
+  position: absolute;
+  top:-40px;
+  left: 22px;
+  -webkit-appearance:none;
+  appearance:none;
+  transform: rotate(90deg);
+}
+.toggle_all:focus{
+  outline:none;
+}
+.toggle_all:before{
+  content: "\276F";
+  font-family: 'iconfont';  /* project id 215544 */
+  font-size: 20px;
+  color: #e6e6e6;
+}
+.toggle_all:checked:before{
+  color:#737373;
+}
+.todo_list li{
+  border-bottom: 1px solid #e6e6e6;
+  position: relative;
+}
+.todo_list li:last-child{
+  border-bottom: none;
+}
+.todo_list li label{
+  padding:15px 60px 15px 15px;
+  display: block;
+  line-height: 1.2;
+  margin-left: 45px;
+}
+.todo_list li .toggle{
+  -webkit-appearance: none;
+  position: absolute;
+  left: 0.2rem;
+  top:0.58rem;
+  /*bottom:0;*/
+  width: 40px;
+  height: 40px;
+
+}
+.todo_list li .toggle:focus{
+  outline:none;
+}
+.todo_list li .toggle:after{
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#ededed" stroke-width="3"/></svg>');
+}
+.todo_list li .toggle:checked:after{
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#bddad5" stroke-width="3"/><path fill="#5dc2af" d="M72 25L42 71 27 56l-4 4 20 20 34-52z"/></svg>');
+}
+.todo_list li label{
+  transition:color 0.3s ease;
+
+}
+.todo_list li.completed label {
+  color: #d9d9d9;
+  text-decoration: line-through;
+}
+.todo_footer{
+  position: relative;
+  height: 20px;
+  color: #959595;
+  padding: 15px;
+  border-top:1px solid #e6e6e6;
+}
+.filters{
+  position: absolute;
+  right: 0;
+  left: 0;
+  text-align: center;
+
+}
+.filters a{
+  color: inherit;
+  text-decoration: none;
+}
+.filters li{
+  display: inline-block;
+}
+.filters li a{
+  margin: 3px;
+  padding: 3px;
+  border:1px solid transparent;
+}
+.todo_count{
+  float:left;
+}
+.clear_completed{
+  float:right;
+  position: absolute;
+  right: 20px;
+  padding: 0 3px;
+  z-index: 2;
+  cursor: pointer;
+}
+.clear_completed:hover{
+  text-decoration: underline;
+}
+.todo_footer:before{
+  content:"";
+  position: absolute;
+  left: 0;
+  top:0;
+  right:0;
+  overflow: hidden;
+  height: 50px;
+  box-shadow:0px 1px 1px rgba(0,0,0,0.2),0px 10px 0px -4px rgba(255,255,255,1),0px 11px 1px -4px rgba(0,0,0,0.2),0px 20px 0px -8px rgba(255,255,255,1),0px 21px 1px -8px rgba(0,0,0,0.2);
+}
+.destroy{
+  position: absolute;
+  color: #cc9a9a;
+  appearance:none;
+  -webkit-appearance:none;
+  background: none;
+  border:none;
+  font-size:28px;
+  text-align:center;
+  right:20px;
+  top:14px;
+  display:none;
+}
+.todo_list li:hover .destroy{
+  display:block;
+}
+.destroy:hover{
+  color: #af5b5e;
+}
+.destroy:focus{
+  outline:none;
+}
+.destroy:after{
+  content:'\D7';
+
+}
+.edit{
+  display:none;
+}
+.todo_footer {
+  font-size: 14px;
+}
+.filters li a.selected{
+  border:1px solid rgba(200,60,60,0.2);
+  border-radius: 4px;
+}
